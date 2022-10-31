@@ -8,6 +8,9 @@ import portletTmpl from './modules/portlet/tmpl/portlet';
 import bannerTmpl from './portlets/banner/tmpl/banner';
 import contentTmpl from './portlets/content/tmpl/content';
 import menuTmpl from './modules/menu/tmpl/menu';
+import popupTmpl from './modules/popup/tmpl/popup';
+import popupOverlayTmpl from './modules/popup/tmpl/popup.overlay';
+import commonInfoTmpl from './common/tmpl/common.info';
 
 const templates = {
     'app': doT.template(appTmpl),
@@ -18,7 +21,10 @@ const templates = {
     'portlet': doT.template(portletTmpl),
     'banner': doT.template(bannerTmpl),
     'content': doT.template(contentTmpl),
-    'menu': doT.template(menuTmpl)
+    'menu': doT.template(menuTmpl),
+    'popup': doT.template(popupTmpl),
+    'popup.overlay': doT.template(popupOverlayTmpl),
+    'common.info': doT.template(commonInfoTmpl)
 };
 
 export default templates;

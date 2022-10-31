@@ -1,6 +1,8 @@
 import Backbone from 'backbone';
+import $ from 'jquery';
 import Template from "../class/template.class";
 import fetchUtil from "../util/fetch.util";
+import i18n from "../util/i18n.util";
 
 const BaseView = Backbone.View.extend({
     replacers: {},
@@ -26,6 +28,33 @@ const BaseView = Backbone.View.extend({
         return template.replace();
     },
 
+    translate: i18n.t.bind(i18n),
+
+    showInfo(options) {
+        const $info = $(this.tmpl('common.info', options));
+        const timeout = options && options.timeout || 3000;
+
+        $('.app').append($info);
+
+        setTimeout(function() {
+            $info.remove();
+        }, timeout);
+    },
+
+    renderOverlay() {
+        var $overlay = $('.fn-overlay');
+
+        if ($overlay.length) {
+            return;
+        }
+
+        $(this.tmpl('popup.overlay')).appendTo('.app');
+    },
+
+    removeOverlay() {
+        $('.fn-overlay').remove();
+    },
+
     parseReplacers(templateString) {
         var template = new Template(templateString, this);
 
@@ -34,6 +63,15 @@ const BaseView = Backbone.View.extend({
 
     loadContent(contentId) {
         return fetchUtil.getContentById(contentId);
+    },
+
+    close() {
+        // TODO
+        // this.$('*').off();
+        // _.invoke(this.childViews, 'close');
+        // !!!!!!!this.form.undelegateEvents();
+
+        this.remove();
     }
 });
 
