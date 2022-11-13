@@ -108,7 +108,7 @@ body {
 }
 
 // Popup
-.popup-container:not(empty) {
+.popup-container:not(:empty) {
     position: fixed;
     left: 0;
     top: 0;
@@ -161,4 +161,28 @@ body {
     color: #d4d4d6;
     background-color: #35353b;
     border: 14px solid #28282e;
+}
+
+.form-messages {
+    color: red;
+}
+
+.field {
+    margin-bottom: 10px;
+
+    &.invalid {
+        input {
+            color: red;
+        }
+    }
+
+    &.valid {
+        input {
+            color: green;
+        }
+    }
+
+    .error-tooltip {
+        color: red;
+    }
 }
