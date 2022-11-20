@@ -17,7 +17,17 @@ const initialResources = {
         }
     ],
     translations: {
-        'footer.ad.text': 'Продам {0} за {1}'
+        'footer.ad.text': 'Продам {0} за {1}',
+        'login.field.username.placeholder': 'Username',
+        'login.field.username.error.required': 'Username is required',
+        'login.field.username.error.length': 'Username should be 5-15 characters',
+        'login.field.username.error.regexp': 'Username should contain only letters and digits',
+        'login.field.password.placeholder': 'Password',
+        'login.field.password.error.required': 'Password is required',
+        'login.field.password.error.length': 'Password should be 5-10 characters',
+        'login.field.password.error.regexp': 'Password should contain only letters and digits',
+        'login.field.password.error.equalToUsername': 'Password should not be equal username',
+        'login.actions.login': 'Sign in'
     }
 };
 
@@ -189,6 +199,14 @@ const pages = [
                 portletType: 'content'
             },
             {
+                portletDropzone: '2',
+                config: {
+                    id: 'LOGIN'
+                },
+                portletType: 'content',
+                title: 'Login'
+            },
+            {
                 portletDropzone: '1',
                 config: {
                     id: 'LOREM_IPSUM_5'
@@ -230,6 +248,12 @@ const contents = [
         id: 'LOREM_IPSUM_5',
         content: `
             On the other hand, we <b>denounce</b> with righteous [CLOCK] indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
+        `
+    },
+    {
+        id: 'LOGIN',
+        content: `
+            <div>[LOGIN]</div>
         `
     },
     {
