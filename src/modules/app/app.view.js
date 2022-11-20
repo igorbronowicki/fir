@@ -1,7 +1,9 @@
+import _ from "underscore";
 import BaseView from './../../common/base.view';
 import PageView from './../page/page.view';
 import MenuView from "../menu/menu.view";
 import device from "../../util/device.util";
+import PopupView from "../popup/popup.view";
 
 const AppView = BaseView.extend({
     initialize: function() {
@@ -15,7 +17,8 @@ const AppView = BaseView.extend({
     currentPage: null,
 
     events: {
-        'click a': 'onNavigate'
+        'click a': 'onNavigate',
+        'click .fn-popup-open': 'onPopupOpen'
     },
 
     onNavigate(e) {
@@ -50,6 +53,14 @@ const AppView = BaseView.extend({
         // TODO: this.currentPage && this.currentPage.close();
         this.currentPage = new PageView({model: pageModel});
         this.$('.fn-page').html(this.currentPage.render().el);
+    },
+
+    onPopupOpen(e) {
+        e.preventDefault();
+
+        new PopupView({
+            data: _.extend({}, e.target.dataset)
+        });
     }
 });
 

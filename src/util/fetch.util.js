@@ -259,7 +259,7 @@ const contents = [
     {
         id: 'FOOTER',
         content: `
-            О нас
+            <a href="#" class="fn-popup-open" data-title="О нас" data-article-id="LOREM_IPSUM_5">О нас</a>
             Блог
             Контакты
             Конфиденциальность
