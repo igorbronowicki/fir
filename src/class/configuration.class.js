@@ -1,15 +1,20 @@
 import _ from 'underscore';
 
 class Configuration {
-    config = {};
+
+    constructor(config) {
+        this._config = {};
+
+        this.add(config);
+    }
 
     add(config) {
-        _.extend(this.config, config);
+        _.extend(this._config, config);
     }
 
     set(key, value) {
         const keys = key.split('.');
-        let config = this.config;
+        let config = this._config;
 
         for (let i = 0; i < keys.length - 1; i++) {
             let key = keys[i];
@@ -24,7 +29,7 @@ class Configuration {
 
     get(key) {
         const keys = key.split('.');
-        let config = this.config;
+        let config = this._config;
 
         return keys.reduce(function(value, key) {
             return value[key];

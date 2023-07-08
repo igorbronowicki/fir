@@ -50,7 +50,7 @@ const AppView = BaseView.extend({
 
     renderPage(pageModel) {
         this.setPageTitle(pageModel.get('title'));
-        // TODO: this.currentPage && this.currentPage.close();
+        this.currentPage && this.currentPage.close();
         this.currentPage = new PageView({model: pageModel});
         this.$('.fn-page').html(this.currentPage.render().el);
     },

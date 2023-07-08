@@ -3,6 +3,7 @@ import $ from 'jquery';
 import Template from "../class/template.class";
 import fetchUtil from "../util/fetch.util";
 import i18n from "../util/i18n.util";
+import user from "../modules/user/user.model.instance";
 
 const BaseView = Backbone.View.extend({
     replacers: {},
@@ -62,7 +63,8 @@ const BaseView = Backbone.View.extend({
     },
 
     loadContent(contentId) {
-        return fetchUtil.getContentById(contentId);
+        const lang = user.get('lang');
+        return fetchUtil.getContentById(contentId, lang);
     },
 
     close() {

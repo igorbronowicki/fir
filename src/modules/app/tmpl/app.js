@@ -8,7 +8,7 @@ export default `
     </div>
     <div class="header fn-header">
         <div class="fn-menu-container"></div>
-        [CLOCK]
+        [CLOCK] [LANGUAGE_SELECTOR]
     </div>
     <div class="page fn-page"></div>
     <div class="footer fn-footer">

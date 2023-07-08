@@ -4,11 +4,9 @@ import _ from 'underscore';
 import device from "./util/device.util";
 import formatter from "./common/formatter";
 import i18n from "./util/i18n.util";
-import config from './modules/configuration/configuration.instance';
 
 import './css/index.css';
 
-config.add(window.fir.variables);
 window.tmpl = {
     _: _,
     device: device,

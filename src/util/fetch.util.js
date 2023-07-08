@@ -17,6 +17,8 @@ const initialResources = {
         }
     ],
     translations: {
+        'language.ru_RU': 'Русский',
+        'language.en_US': 'English',
         'footer.ad.text': 'Продам {0} за {1}',
         'login.field.username.placeholder': 'Username',
         'login.field.username.error.required': 'Username is required',
@@ -272,7 +274,7 @@ const contents = [
 ];
 
 const fetchUtil = {
-    getInitialResources() {
+    getInitialResources(lang) {
         core.message('request', {
             description: 'Get initial resources'
         });
@@ -285,7 +287,7 @@ const fetchUtil = {
         return initialResources;
     },
 
-    getPageInfo(friendlyURL) {
+    getPageInfo(friendlyURL, lang) {
         const pageInfo = _.findWhere(pages, {friendlyURL: friendlyURL});
 
         core.message('request', {
@@ -301,7 +303,7 @@ const fetchUtil = {
         return pageInfo;
     },
 
-    getContentById(contentId) {
+    getContentById(contentId, lang) {
         const content = _.findWhere(contents, {id: contentId}) || {};
 
         core.message('request', {

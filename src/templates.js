@@ -12,6 +12,7 @@ import popupTmpl from './modules/popup/tmpl/popup';
 import popupOverlayTmpl from './modules/popup/tmpl/popup.overlay';
 import commonInfoTmpl from './common/tmpl/common.info';
 import loginTmpl from './replacers/login/tmpl/login';
+import languageTmpl from "./replacers/language/tmpl/language";
 
 const templates = {
     'app': doT.template(appTmpl),
@@ -26,7 +27,8 @@ const templates = {
     'popup': doT.template(popupTmpl),
     'popup.overlay': doT.template(popupOverlayTmpl),
     'common.info': doT.template(commonInfoTmpl),
-    'login': doT.template(loginTmpl)
+    'login': doT.template(loginTmpl),
+    'language': doT.template(languageTmpl)
 };
 
 export default templates;

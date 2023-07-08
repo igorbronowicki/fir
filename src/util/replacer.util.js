@@ -1,10 +1,12 @@
 import BaseView from "../common/base.view";
 import ClockView from "../replacers/clock/clock.view";
+import LanguageView from "../replacers/language/language.view";
 import ContentView from "../replacers/content/content.view";
 import LoginView from "../replacers/login/login.view";
 
 const replacers = [
     ClockView,
+    LanguageView,
     ContentView,
     LoginView
 ];
